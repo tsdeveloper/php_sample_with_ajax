@@ -26,18 +26,18 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Your Name *" value="Web Developer" />
+                                <input type="text" class="form-control" placeholder="Your Name *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone Number *" value="+55" />
+                                <input type="text" class="form-control" placeholder="Phone Number *" value="" />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" id="password" name="password" class="form-control" placeholder="Your Password *" value="123" />
+                                <input type="text" class="form-control" placeholder="Your Password *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="text" id="conf_password" name="conf_password" class="form-control" placeholder="Confirm Password *" value="123" />
+                                <input type="text" class="form-control" placeholder="Confirm Password *" value="" />
                             </div>
                         </div>
                     </div>
