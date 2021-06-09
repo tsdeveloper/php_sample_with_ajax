@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,34 +30,59 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Name *" value="" />
+                                <input type="text" name="name" class="form-control" placeholder="Your Name *" value="Web Developer" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Phone Number *" value="" />
+                                <input type="text" name="number" class="form-control" placeholder="Phone Number *" value="47" />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Password *" value="" />
+                                <input type="text" name="password" class="form-control" placeholder="Your Password *" value="123" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Confirm Password *" value="" />
+                                <input type="text" name="conf_password" class="form-control" placeholder="Confirm Password *" value="123" />
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-outline-success">Submit</button>
+                    <button type="button" id="enviar-form" class="btn btn-outline-success enviar-form">Submit</button>
                 </form>
             </div>
         </div>
     </div>
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+
 
     <script>
         $(function() {
-            console.log("data:", $('#frm-register-client').serialize());
+
+            $('#enviar-form').click(function() {
+
+                $.ajax({
+                    url: 'insert.php',
+                    type: 'post',
+                    data: $('#frm-register-client').serialize(),
+                    success: function(meu_param) {
+
+                        // var retorno_json = JSON.stringify(meu_param);
+                        console.log(meu_param);
+
+                        if (meu_param.success === "1") {
+                            // location.href = 'index.php';
+                        } else {
+                            alert('Invalid credentials');
+                        }
+
+                    },
+                    error: function(ex, hre) {
+                        console.log()
+                    }
 
 
+                })
 
+            })
 
         })
     </script>
