@@ -63,15 +63,15 @@
                     url: 'insert.php',
                     type: 'post',
                     data: $('#frm-register-client').serialize(),
-                    success: function(meu_param) {
+                    success: function(response) {
+                        console.log(response);
+                        var retorno_json = JSON.parse(response);
+                        console.log(retorno_json);
 
-                        // var retorno_json = JSON.stringify(meu_param);
-                        console.log(meu_param);
-
-                        if (meu_param.success === "1") {
-                            // location.href = 'index.php';
+                        if (retorno_json.success) {
+                            alert('dados atualizados');
                         } else {
-                            alert('Invalid credentials');
+                            alert('houve algum erro');
                         }
 
                     },

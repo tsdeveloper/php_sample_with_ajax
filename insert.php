@@ -1,4 +1,5 @@
 <?php
 
 echo 'chegou ate aqui';
-print_r($_POST);
+echo json_encode(["success" => true]);
+
